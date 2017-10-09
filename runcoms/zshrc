@@ -11,6 +11,18 @@ if [[ -s "${ZDOTDIR:-$HOME}/.zprezto/init.zsh" ]]; then
 fi
 
 # Customize to your needs...
-export PIP_REQUIRE_VIRTUALENV=true
+alias cs241="ssh khong18@fa17-cs241-386.cs.illinois.edu"
 alias deac="deactivate"
 
+gpip() {
+    PIP_REQUIRE_VIRTUALENV="" pip "$@"
+}
+
+gpip3() {
+    PIP_REQUIRE_VIRTUALENV="" pip3 "$@"
+}
+
+fpath=(/usr/local/share/zsh-completions $fpath)
+
+export PATH=/Developer/NVIDIA/CUDA-8.0/bin${PATH:+:${PATH}}
+export DYLD_LIBRARY_PATH=/Developer/NVIDIA/CUDA-8.0/lib\ ${DYLD_LIBRARY_PATH:+:${DYLD_LIBRARY_PATH}}
